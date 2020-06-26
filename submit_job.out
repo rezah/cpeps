@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#SBATCH --job-name=Cpeps
+#SBATCH --error=/home/rezah/Cpeps/QR.err
+#SBATCH --qos=normal
+#SBATCH -p serial  # partition (specified in README)
+#SBATCH -N 1 # node count
+#SBATCH -t 120:00:00
+#SBATCH --ntasks-per-node=8   #number of cores (number of MPI/OPENMP threads)
+#SBATCH --mem=32GB   #total memory--always overestimate by ~15-20%
+
+cd /home/rezah/Cpeps/
+export TMPDIR="/scratch/local/rezah"
+export OMP_NUM_THREADS=8
+export MKL_NUM_THREADS=8
+python cpeps.py > /home/rezah/Cpeps/QR.out 
