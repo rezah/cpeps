@@ -1,2 +1,2 @@
 # cpeps
-A 2D tensor network ansatz code for quantum systems
+A 2D tensor network ansatz for quantum systems
